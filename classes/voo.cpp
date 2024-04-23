@@ -8,7 +8,8 @@ voo::voo(int codigo){
 }
 
 voo::~voo(){
-	for(int i = 0; i < tripulantes.size()){
+	int tamanho = tripulantes.size();
+	for(int i = 0; i < tamanho;i++){
 		tripulantes.pop_back();
 	}
 }
