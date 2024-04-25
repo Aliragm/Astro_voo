@@ -2,7 +2,8 @@
 #define CADASTRAVOO_H
 
 #include "voo.h"
+#include "gerenciador.h"
 
-void cadastro_voo();
+void cadastro_voo(gerenciador a);
 
 #endif
