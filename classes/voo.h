@@ -17,6 +17,7 @@ public:
     ~voo();
     void explodir();
     void addtripulante(astronauta *tripulante);
+    int get_codigo();
 };
 
 #endif
