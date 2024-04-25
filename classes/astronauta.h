@@ -14,6 +14,7 @@ private:
     bool esta_disponivel;
     int qntd_voos;
     std::list<int> voos;
+
 public:
     astronauta(std::string cpf, std::string nome, int idade);
     ~astronauta();
