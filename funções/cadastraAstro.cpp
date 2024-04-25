@@ -1,6 +1,6 @@
 #include "cadastraAstro.h"
 
-void cadastro_astro(){
+void cadastro_astro(gerenciador a){
 	std::string cpf;
 	std::string nome;
 	int idade;
@@ -10,5 +10,6 @@ void cadastro_astro(){
 	std::cin >> nome;
 	std::cout << "Digite a idade: ";
 	std::cin >> idade;
-	astronauta a(cpf, nome, idade);
+	astronauta b(cpf, nome, idade);
+	a.astronauta_criado(&b);
 }
