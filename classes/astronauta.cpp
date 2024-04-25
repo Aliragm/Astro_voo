@@ -10,10 +10,7 @@ astronauta::astronauta(std::string cpf, std::string nome, int idade){
 }
 
 astronauta::~astronauta() {
-	int tamanho = voos.size();
-    for(int i = 0; i < tamanho;i++){
-		voos.pop_back();
-	}
+	voos.clear();
 }
 
 void astronauta::morte(){
