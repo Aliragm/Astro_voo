@@ -8,10 +8,7 @@ voo::voo(int codigo){
 }
 
 voo::~voo(){
-	int tamanho = tripulantes.size();
-	for(int i = 0; i < tamanho;i++){
-		tripulantes.pop_back();
-	}
+	tripulantes.clear();
 }
 
 void voo::explodir(){
@@ -21,4 +18,8 @@ void voo::explodir(){
 
 void voo::addtripulante(astronauta *tripulante) {
 	this->tripulantes.push_back(tripulante);
+}
+
+int voo::get_codigo(){
+	return this->codigo;
 }
