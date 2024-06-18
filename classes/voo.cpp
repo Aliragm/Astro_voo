@@ -18,8 +18,36 @@ void voo::explodir(){
 
 void voo::addtripulante(astronauta *tripulante) {
 	this->tripulantes.push_back(tripulante);
+	this->qntd_tripulantes += 1;
 }
 
-int voo::get_codigo(){
-	return this->codigo;
+void voo::get_codigo(){
+	std::cout << this->codigo;
+}
+
+int voo::get_trip_qntd(){
+	return this->qntd_tripulantes;
+}
+
+void voo::listar_tripulantes() {
+    int contador = 0;
+    for (std::list<astronauta*>::iterator it = tripulantes.begin(); it != tripulantes.end(); ++it) {
+        contador += 1;
+        std::cout << contador << " => ";
+        (*it)->exibir_nome();
+        std::cout << std::endl;
+    }
+}
+
+
+void voo::tirar_tripulante(int num) {
+    int contador = 0;
+    for (std::list<astronauta*>::iterator it = tripulantes.begin(); it != tripulantes.end(); ++it) {
+        contador += 1;
+        if (num == contador) {
+            it = tripulantes.erase(it);
+            break; 
+        }
+    }
+    this->qntd_tripulantes -= 1;
 }
