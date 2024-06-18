@@ -4,6 +4,6 @@
 #include "astronauta.h"
 #include "gerenciador.h"
 
-void cadastro_astro(gerenciador a);
+void cadastro_astro(gerenciador &a);
 
 #endif
