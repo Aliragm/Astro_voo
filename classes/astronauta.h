@@ -20,6 +20,7 @@ public:
     ~astronauta();
     void morte();
     void voou(int cod);
+    void exibir_nome();
     
 };
 
