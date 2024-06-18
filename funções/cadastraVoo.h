@@ -4,6 +4,6 @@
 #include "voo.h"
 #include "gerenciador.h"
 
-void cadastro_voo(gerenciador a);
+void cadastro_voo(gerenciador &a);
 
 #endif
