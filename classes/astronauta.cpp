@@ -21,3 +21,7 @@ void astronauta::morte(){
 void astronauta::voou(int cod) {
     this->voos.push_back(cod);
 }
+
+void astronauta::exibir_nome(){
+	std::cout << this->nome << std::endl;
+}
