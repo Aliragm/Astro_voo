@@ -21,6 +21,9 @@ public:
     int get_trip_qntd();
     void listar_tripulantes();
     void tirar_tripulante(int num);
+    void voar();
+    int retornar_codigo();
+    bool esta_voando();
 };
 
 #endif
