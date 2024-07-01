@@ -11,9 +11,14 @@ voo::~voo(){
 	tripulantes.clear();
 }
 
-void voo::explodir(){
-	this->explodiu = true;
-	this->voando = false;
+void voo::explodir() {
+    this->explodiu = true;
+    this->voando = false;
+    for (std::list<astronauta*>::iterator it = this->tripulantes.begin(); it != this->tripulantes.end(); it++) {
+        if (*it) {  
+            (*it)->morte(); 
+        }
+    }
 }
 
 void voo::addtripulante(astronauta *tripulante) {
@@ -23,6 +28,10 @@ void voo::addtripulante(astronauta *tripulante) {
 
 void voo::get_codigo(){
 	std::cout << this->codigo;
+}
+
+int voo::retornar_codigo(){
+	return this->codigo;
 }
 
 int voo::get_trip_qntd(){
@@ -50,4 +59,16 @@ void voo::tirar_tripulante(int num) {
         }
     }
     this->qntd_tripulantes -= 1;
+}
+
+bool voo::esta_voando(){
+	return this->voando;
+}
+
+void voo::voar(){
+	this->voando = true;
+	for (std::list<astronauta*>::iterator it = tripulantes.begin(); it != tripulantes.end(); ++it) {
+		(*it)->voou(this->retornar_codigo());
+	}
+
 }
