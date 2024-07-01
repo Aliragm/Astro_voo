@@ -21,6 +21,8 @@ public:
     void morte();
     void voou(int cod);
     void exibir_nome();
+    bool checar_status();
+    bool checar_vida();
     
 };
 
