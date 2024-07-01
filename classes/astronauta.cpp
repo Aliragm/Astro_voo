@@ -20,8 +20,28 @@ void astronauta::morte(){
 
 void astronauta::voou(int cod) {
     this->voos.push_back(cod);
+    this->esta_disponivel = false;
+    this->qntd_voos += 1;
 }
 
 void astronauta::exibir_nome(){
 	std::cout << this->nome << std::endl;
+}
+
+bool astronauta::checar_status(){
+	if(this->esta_vivo == true && this->esta_disponivel == true){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+bool astronauta::checar_vida(){
+	if(this->esta_vivo == true){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
