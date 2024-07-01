@@ -6,6 +6,8 @@
 #include "gerenciador.h"
 #include "atribuir_astronauta.h"
 #include "desatribuir_astronauta.h"
+#include "lancar_voo.h"
+#include "explodir.h"
 
 int main(){
 	gerenciador a;
@@ -19,6 +21,8 @@ int main(){
 		std::cout << "2 - criar voo" << std::endl;
 		std::cout << "3 - atribuir astronauta a voo" << std::endl;
 		std::cout << "4 - desatribuir astronauta a voo" << std::endl;
+		std::cout << "5 - lancar voo" << std::endl;
+		std::cout << "6 - explodir voo" << std::endl;
 		std::cin >> escolha;
 		std::cout << std::endl;
 		switch(escolha){
@@ -27,6 +31,8 @@ int main(){
 		case 2: cadastro_voo(a);std::cin.ignore();break;
 		case 3: atribuicao(a);break;
 		case 4: desatribuir(a);break;
+		case 5: lancar_voo(a);break;
+		case 6: explodira(a); break;
 		}
 	}
 
