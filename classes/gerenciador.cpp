@@ -8,6 +8,8 @@ std::map<int, astronauta*> gerenciador::astronautas_mortos;
 std::map<int, voo*> gerenciador::voos_destruidos;
 int gerenciador::qntd_astros_mortos = 0;
 int gerenciador::qntd_voos_destruidos = 0;
+std::map<int, voo*> gerenciador::voos_finalizados;
+int gerenciador::qntd_voos_finalizados = 0;
 
 
 gerenciador::~gerenciador() {
@@ -93,6 +95,7 @@ void gerenciador::exibir_voos_voando(){
     std::map<int, voo*>::iterator voo_explodido = this->voos.find(voo_escolhido);
     if (voo_explodido != this->voos.end()) {
         this->voos_destruidos.insert(std::make_pair(voo_escolhido, voo_explodido->second));
+        this->voos.erase(voo_explodido);
     }
 
     for (std::map<int, astronauta*>::iterator it = this->astronautas.begin(); it != this->astronautas.end();) {
@@ -105,6 +108,19 @@ void gerenciador::exibir_voos_voando(){
         } else {
             ++it;
         }
+    }
+}
+
+void gerenciador::finalizar_voo(voo* espaconave, int voo_escolhido){
+    espaconave->pousar();
+
+    this->qntd_voos_finalizados += 1;
+    this->qntd_voos -= 1;
+
+    std::map<int, voo*>::iterator voo_atual = this->voos.find(voo_escolhido);
+    if (voo_atual != this->voos.end()) {
+        this->voos_finalizados.insert(std::make_pair(voo_escolhido, voo_atual->second));
+        this->voos.erase(voo_atual);
     }
 }
 
