@@ -73,16 +73,25 @@ bool gerenciador::checar_voos_com_astronautas(){
     return false;
 }
 
-void gerenciador::exibir_voos_voando(){
+bool gerenciador::exibir_voos_voando(){
+    int a = 0;
 	for (std::map<int, voo*>::iterator it = voos.begin(); it != voos.end(); it++){
 		if(it->second->esta_voando() == true && it->second->get_trip_qntd() > 0){
 			std::cout << it->first << " => ";
         	it->second->get_codigo();
         	std::cout << std::endl;
+            a += 1;
 		}
 		else{
 			continue;
 		}
+    }
+    if(a == 0){
+        std::cout << "Não há voos voando." << std::endl;
+        return false;
+    }
+    else{
+        return true;
     }
 }
 
