@@ -24,6 +24,7 @@ public:
     void voar();
     int retornar_codigo();
     bool esta_voando();
+    void pousar();
 };
 
 #endif
