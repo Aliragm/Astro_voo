@@ -15,6 +15,8 @@ public:
 	static int qntd_voos;
 	static int qntd_astros_mortos;
 	static int qntd_voos_destruidos;
+	static std::map<int, voo*> voos_finalizados;
+	static int qntd_voos_finalizados;
 	
 	~gerenciador();
 	void astronauta_criado(astronauta* tripulante);
@@ -27,6 +29,7 @@ public:
 	void voo_destruido(voo* espaconave);
 	void astronauta_morto(astronauta* tripulante);
 	void explodir_voo(voo* espaconave, int voo_escolhido);
+	void finalizar_voo(voo* espaconave, int voo_escolhido);
 };
 
 #endif
