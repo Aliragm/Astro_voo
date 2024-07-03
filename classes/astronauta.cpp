@@ -24,6 +24,10 @@ void astronauta::voou(int cod) {
     this->qntd_voos += 1;
 }
 
+void astronauta::voltou(){
+	this->esta_disponivel = true;
+}
+
 void astronauta::exibir_nome(){
 	std::cout << this->nome << std::endl;
 }
