@@ -72,3 +72,10 @@ void voo::voar(){
 	}
 
 }
+
+void voo::pousar(){
+    this->voando = false;
+    for (std::list<astronauta*>::iterator it = tripulantes.begin(); it != tripulantes.end(); ++it) {
+		(*it)->voltou();
+	}
+}
