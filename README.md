@@ -1,6 +1,6 @@
 # Astro_voo
 
-Programa de gerenciamento de astronautas em voos.
+Programa de gerenciamento de astronautas em voos feito para estudar orientação a objetos.
 
 para compilar o programa baixe todos os arquivos e utilize o g++:
 
